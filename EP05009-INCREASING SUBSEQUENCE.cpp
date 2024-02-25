@@ -6,7 +6,6 @@ void Try(int i){
 	for(int j = 0; j <= 1; ++j){
 		b[i] = j;
 		if(i == n-1){
-			
 			string p = "";
 			vector<int> tmp;
 			for(int idx = 0; idx < n; ++idx)
