@@ -1,5 +1,5 @@
 /*
-code bi TLE
+code minh bi TLE
 tham khao tai
 https://github.com/QuanNM-PTIT/C_plus_plus_PTIT/blob/main/CPP0329%20-%20TH%C6%AF%C6%A0NG%20HAI%20S%E1%BB%90%20NGUY%C3%8AN%20L%E1%BB%9AN.cpp
 */
