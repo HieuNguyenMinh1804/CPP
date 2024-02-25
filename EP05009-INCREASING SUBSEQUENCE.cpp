@@ -20,10 +20,6 @@ void Try(int i){
 					}
 				}
 				if(ok){
-//					for(int idx = 0 ; idx < tmp.size(); ++idx){
-//						cout << tmp[idx] << " ";
-//					}
-//					cout << endl;
 					for(int idx = 0 ; idx < tmp.size(); ++idx){
 						p += to_string(tmp[idx]);
 						p += " ";
