@@ -24,7 +24,12 @@ int main(){
 		}
 		multiset<int> ms;
 		for(int i = 0; i < n; ++i)
-			if(cnt[a[i]]) ms.insert(a[i]);
+			if(cnt[a[i]]){
+			    while(cnt[a[i]]){
+			        ms.insert(a[i]);
+			        cnt[a[i]]--;
+			    }
+			}
 		while(ms.size()){
 			cout << *ms.begin() << " ";
 			auto it = ms.find(*ms.begin());
