@@ -1,28 +1,45 @@
 #include<bits/stdc++.h>
+#define ll long long
 using namespace std;
-int lcm(int a, int b){
-	return a/__gcd(a,b)*b;
-}
+int T;
+ll lcm(ll a, ll b){ return a/__gcd(a,b)*b; }
+
 struct Fraction{
-	int tu, mau;
+	ll tu, mau;
 };
+
 void read_input(Fraction &A){
 	cin >> A.tu >> A.mau;
 }
+
 void process(Fraction a, Fraction b){
-	int mc = lcm(a.mau, b.mau);
-	int tc = a.tu*(mc/a.mau) + b.tu*(mc/b.mau);
-	mc *= mc; tc *= tc;
-	int x = __gcd(tc, mc);
-	mc /= x; tc /= x;
-	cout << tc << "/" << mc << " ";
-	int d1 = a.tu*b.tu*tc;
-	int d2 = a.mau*b.mau*mc;
-	int x1 = __gcd(d1,d2);
-	cout << d1/x1 << "/" << d2/x1 << endl;
+	ll mc = lcm(a.mau, b.mau);	
+	
+	ll tc = a.tu*(mc/a.mau) + b.tu*(mc/b.mau);
+	
+	mc *= mc; tc *= tc;	
+	
+	ll x = __gcd(tc, mc);	
+	
+	mc /= x; tc /= x;	
+	
+	cout << tc << "/" << mc << " ";	
+	
+	ll d1 = a.tu * b.tu * tc;	
+	
+	ll d2 = a.mau * b.mau * mc;
+	
+	ll x1 = __gcd(d1,d2);	
+	
+	d1 /= x1; d2 /= x1;	
+	
+	if((d2 < 0) && (d1 > 0)) cout << "-" << d1 << "/" << abs(d2) << endl;	
+	else if((d2 < 0) && (d1 < 0)) cout << abs(d1) << "/" << abs(d2) << endl;	
+	else cout << d1 << "/" << d2 << endl;
 }
+
 int main() {
-	int T;
+	int t;
 	cin >> T;
 	while (T--) {
 		Fraction A;
