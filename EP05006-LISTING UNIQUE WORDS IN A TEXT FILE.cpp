@@ -11,28 +11,26 @@ int main(){
 		if(s[i] >= 'A' && s[i] <= 'Z') s[i]+= 32;	
     	string check = ",.?!:;-/()";
     	while(s[s.size()-1] == ',' || s[s.size()-1] == '.' || s[s.size()-1] == '?' || s[s.size()-1] == '!' || s[s.size()-1] == ':' || s[s.size()-1] == ';' || s[s.size()-1] == '-' || s[s.size()-1] == '/' || s[s.size()-1] == '(' || s[s.size()-1] == ')')	
-    		s.erase(s.size()-1,1);
+    		s.erase(s.size()-1 , 1);
     	while(s[0] == ',' || s[0] == '.' || s[0] == '?' || s[0] == '!' || s[0] == ':' || s[0] == ';' || s[0] == '-' || s[0] == '/' || s[0] == '(' || s[0] == ')')
-    		s.erase(0,1);
+    		s.erase(0 , 1);
     	int ok = 0;
     	for(int i = 0; i < s.size(); ++i) 
     		for(int j = 0; j < check.size(); ++j)
     			if(s[i] == check[j]) ok = 1;
-    	if(!ok && s != "") mp[s]++;
+    	if( !ok && s != "" ) mp[s]++;
     	else if(s != ""){
     		vector<int> pos;
     		for(int i = 0; i < s.size(); ++i) if(s[i] == ',' || s[i] == '.' || s[i] == '?' || s[i] == '!' || s[i] == ':' || s[i] == ';' || s[i] == '-' || s[i] == '/' || s[i] == '(' || s[i] == ')') pos.push_back(i);
-    		//cout << pos.size() << endl;
     		int st = 0;	
     		string tmp;
     		for(int i = 0; i < pos.size(); ++i){
     			tmp = s.substr(st, pos[i]-st);
-    			//cout << tmp <<" st = "<<st << " pos[i] = " << pos[i] << endl;
-    			mp[tmp]++;
+    			if(tmp != "" ) mp[tmp]++;
     			st = pos[i]+1;
     		}
     		tmp = s.substr(st, s.size()-st);
-    		mp[tmp]++;
+    		if(tmp != "") mp[tmp]++;
     	}
 	}		
 	set<int> st;
